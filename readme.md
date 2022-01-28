@@ -8,8 +8,10 @@ PHP versi 7.4, NodeJS versi 16.3 dan NPM versi 8.1.
 
 ## Cara menjalankan
 
-1. Lakukan git clone.
-2. Jalankan perintah `git checkout --track -b doc-site origin/doc-site`. Perintah ini akan membuat branch lokal bernama `doc-site` dan akan melakukan fetch dan pull kode dari remote bernama `origin` dengan branch remote bernama `doc-site`.
+> Pastikan Anda menggunakan NodeJS dan menginstal [degit](https://github.com/Rich-Harris/degit) - sebuah alat untuk mengunduh perancah proyek.
+
+1. Buatlah branch baru bernama `doc-site` di repositori Anda dengan perintah `git checkout -b doc-site`.
+2. Jalankan perintah `degit github:ristekusdi/oss-docs`. Perintah ini akan mengunduh repositori `ristekusdi/oss-docs` tanpa folder `.git`.
 3. Jalankan perintah `composer install` untuk menginstal composer dependencies.
 4. Jalankan perintah `npm install` untuk menginstal npm dependencies.
 5. Jalankan perintah `npm run watch` untuk menampilkan hasil di browser.
