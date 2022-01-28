@@ -28,3 +28,29 @@ section: content
 ```
 
 Nilai `_layouts.documentation` berarti layout diambil dari folder `source/_layouts` dengan file bernama `documentation.blade.php`.
+
+## Cara deploy
+
+Sebelum melakukan deployment ke production, pastikan Anda mengubah nilai `baseUrl` yang ada di file `config.production.php`. Berikut contohnya.
+
+```php
+<?php
+
+return [
+    // Sebelum
+    'baseUrl' => '/',
+
+    // Sesudah
+    'baseUrl' => 'https://ristekusdi.github.io/nama-package-oss'
+];
+```
+
+Deployment menggunakan GitHub Actions dan Workflows. Sehingga dengan melakukan perintah `git push` GitHub akan melakukan deployment dan hasil deployment berada pada branch bernama `gh-pages`.
+
+Kemudian, masuk ke tab `Settings` di GitHub repository, pilih menu `Pages` dan pilih branch `gh-pages` sebagai branch tempat untuk menampilkan static sites.
+
+![Before Deployment Settings!](/guides/before-deployment-settings.PNG "Before Deployment Settings")
+
+Hasil pengaturan akhir seperti contoh berikut.
+
+![After Deployment Settings!](/guides/after-deployment-settings.PNG "After Deployment Settings")
